@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.5.0)
+  - BouncyLayout (1.1.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BouncyLayout
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  BouncyLayout: f91c6504437a61acd733404f55f75bd8154f5840
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 1308935d4a7f81fe2480c96ee35ddebabe720a94
+PODFILE CHECKSUM: e32342646d4bebffd491201828911728c82560c4
 
 COCOAPODS: 1.2.1
