@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+let url = "http://94.19.235.6:3000"
+//let url = "http://127.0.0.1:3000"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -45,3 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func deleteTrash(from smth: String, fromSide side: Int = 2) -> String{
+    var temp = smth
+    if (temp.count>=2){
+        switch side{
+        case 0:
+            temp.remove(at: temp.startIndex)
+            break
+        case 1:
+            temp.remove(at: temp.index(before: temp.endIndex))
+            break
+        case 2:
+            temp.remove(at: temp.startIndex)
+            temp.remove(at: temp.index(before: temp.endIndex))
+            break
+        default:
+            return "error"
+        }
+    } else {return "error"}
+    return temp
+}

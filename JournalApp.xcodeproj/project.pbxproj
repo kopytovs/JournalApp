@@ -13,6 +13,7 @@
 		9309BBB91FDD6CDD00667884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9309BBB81FDD6CDD00667884 /* Assets.xcassets */; };
 		9309BBBC1FDD6CDD00667884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9309BBBA1FDD6CDD00667884 /* LaunchScreen.storyboard */; };
 		9309BBCF1FDDA4D100667884 /* JournalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */; };
+		9309BBD71FDDD4B200667884 /* JViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309BBD61FDDD4B200667884 /* JViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9309BBBB1FDD6CDD00667884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9309BBBD1FDD6CDD00667884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsTableViewController.swift; sourceTree = "<group>"; };
+		9309BBD61FDDD4B200667884 /* JViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				9309BBB11FDD6CDD00667884 /* AppDelegate.swift */,
 				9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */,
+				9309BBD61FDDD4B200667884 /* JViewController.swift */,
 				9309BBB51FDD6CDD00667884 /* Main.storyboard */,
 				9309BBB81FDD6CDD00667884 /* Assets.xcassets */,
 				9309BBBA1FDD6CDD00667884 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9309BBB21FDD6CDD00667884 /* AppDelegate.swift in Sources */,
+				9309BBD71FDDD4B200667884 /* JViewController.swift in Sources */,
 				9309BBCF1FDDA4D100667884 /* JournalsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

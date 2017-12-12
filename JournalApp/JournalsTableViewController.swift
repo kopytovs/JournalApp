@@ -21,9 +21,7 @@ class JournalsTableViewController: UITableViewController {
     
     var journalsTitle: [String] = [String]()
     var journalsDescr: [String] = [String]()
-    //var journalsTitle: [String] = ["Первый Журнал", "Менс Хелс", "Космополитан", "Микки Маус"]
-    //var journalsDescr: [String] = ["бла бла", "еще раз бла бла", "здесь может быть ваше описание", "ну или реклама"]
-    let url = "http://94.19.235.6:3000"
+    var journalsID: [Int] = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +40,17 @@ class JournalsTableViewController: UITableViewController {
     }
     
     private func loadData(){
-        Alamofire.request("\(url)/Journal?select=journal_title,anot").responseJSON(completionHandler: {response in
+        Alamofire.request("\(url)/Journal?select=journal_title,anot,journal_id").responseJSON(completionHandler: {response in
             switch response.result{
             case .success(let value):
                 let myJson = JSON(value)
                 for index in 0...myJson.count-1{
-                    let title = myJson[index]["journal_title"].stringValue
-                    let descr = myJson[index]["anot"].stringValue
+                    let title = deleteTrash(from: myJson[index]["journal_title"].stringValue)
+                    let descr = deleteTrash(from: myJson[index]["anot"].stringValue)
+                    let ID = myJson[index]["journal_id"].intValue
                     self.journalsTitle.append(title)
                     self.journalsDescr.append(descr)
-                    print(title)
+                    self.journalsID.append(ID)
                 }
                 self.tableView.reloadData()
                 break
@@ -60,7 +59,6 @@ class JournalsTableViewController: UITableViewController {
                 break
             }
         })
-        
     }
 
     // MARK: - Table view data source
@@ -140,14 +138,21 @@ class JournalsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let destinationController = segue.destination as! JViewController
+            destinationController.myID = self.journalsID[indexPath.row]
+            destinationController.sData[0] = self.journalsTitle[indexPath.row]
+            destinationController.sData[1] = self.journalsDescr[indexPath.row]
+            self.tableView.cellForRow(at: indexPath)?.isSelected = false
+        }
     }
-    */
+ 
 
 }

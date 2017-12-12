@@ -9,5 +9,6 @@ target 'JournalApp' do
   pod 'Alamofire', '~> 4.5'
   pod "BouncyLayout"
   pod 'SwiftyJSON'
+  pod 'ExpyTableView'
 
 end

@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
   - BouncyLayout (1.1.0)
+  - ExpyTableView (0.3.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - BouncyLayout
+  - ExpyTableView
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BouncyLayout: f91c6504437a61acd733404f55f75bd8154f5840
+  ExpyTableView: e6380c5ac1f6c1044fbc63800380c64b3477e53b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e32342646d4bebffd491201828911728c82560c4
+PODFILE CHECKSUM: f62b65cbd5bd8b4adaa24090341def9a1e5b9148
 
 COCOAPODS: 1.2.1
