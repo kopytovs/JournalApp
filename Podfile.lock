@@ -1,21 +1,30 @@
 PODS:
   - Alamofire (4.5.0)
   - BouncyLayout (1.1.0)
+  - DynamicColor (4.0.2)
   - ExpyTableView (0.3.1)
+  - PMSuperButton (2.0.4)
+  - SimplePDF (3.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - BouncyLayout
+  - DynamicColor (~> 4.0.1)
   - ExpyTableView
+  - PMSuperButton
+  - SimplePDF
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BouncyLayout: f91c6504437a61acd733404f55f75bd8154f5840
+  DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
   ExpyTableView: e6380c5ac1f6c1044fbc63800380c64b3477e53b
+  PMSuperButton: 148f52039b68d13b9335a3e8af81f37aec55cfa8
+  SimplePDF: 903143ede36965886997a5c1bc6b8940b082ba20
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f62b65cbd5bd8b4adaa24090341def9a1e5b9148
+PODFILE CHECKSUM: fb9a7a290fddc59f13fcc8c32ab4fb83be0f8252
 
 COCOAPODS: 1.2.1

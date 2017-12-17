@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import DynamicColor
 
 class myCell: UITableViewCell{
     @IBOutlet weak var Timage: UILabel!
@@ -17,12 +18,15 @@ class myCell: UITableViewCell{
     @IBOutlet weak var safeView: UIView!
 }
 
-class JournalsTableViewController: UITableViewController {
+class JournalsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var journalsTitle: [String] = [String]()
     var journalsDescr: [String] = [String]()
     var journalsID: [Int] = [Int]()
-
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var imageDoc: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +35,8 @@ class JournalsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.loadData()
     }
 
@@ -45,8 +51,8 @@ class JournalsTableViewController: UITableViewController {
             case .success(let value):
                 let myJson = JSON(value)
                 for index in 0...myJson.count-1{
-                    let title = deleteTrash(from: myJson[index]["journal_title"].stringValue)
-                    let descr = deleteTrash(from: myJson[index]["anot"].stringValue)
+                    let title = myJson[index]["journal_title"].stringValue
+                    let descr = myJson[index]["anot"].stringValue
                     let ID = myJson[index]["journal_id"].intValue
                     self.journalsTitle.append(title)
                     self.journalsDescr.append(descr)
@@ -59,27 +65,29 @@ class JournalsTableViewController: UITableViewController {
                 break
             }
         })
+        self.imageDoc.image = #imageLiteral(resourceName: "man")
+        self.nameLabel.text = "Ответственный редактор - Столяров Сергей Павлович, к.т.н. доцент"
+        self.imageDoc.layer.cornerRadius = self.imageDoc.frame.size.width/24
+        self.imageDoc.clipsToBounds = true
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return journalsTitle.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! myCell
         
-        cell.safeView.layer.cornerRadius = cell.safeView.frame.size.width/32
         cell.Timage.layer.cornerRadius = cell.Timage.frame.size.width/8
-        cell.safeView.clipsToBounds = true
         cell.Timage.clipsToBounds = true
         
         let name = self.journalsTitle[indexPath.row]
@@ -97,7 +105,9 @@ class JournalsTableViewController: UITableViewController {
         }
         cell.Timage.text = imText
         
-        cell.Timage.backgroundColor = UIColor(red:0.85, green:0.91, blue:0.99, alpha:1.0)
+        cell.Timage.backgroundColor = DynamicColor(red:0.85, green:0.91, blue:0.99, alpha:1.0).tinted()
+        
+        //cell.backgroundColor = DynamicColor(hexString: "#d7fbe4")
         
         return cell
     }

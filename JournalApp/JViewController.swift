@@ -35,7 +35,9 @@ class JViewController: UIViewController, ExpyTableViewDelegate, ExpyTableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadData()
+        if (rubMas.isEmpty)||(artMas.isEmpty){
+            loadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +57,14 @@ class JViewController: UIViewController, ExpyTableViewDelegate, ExpyTableViewDat
                     case .success(let value):
                         let myJson2 = JSON(value)
                         for (_, sub):(String, JSON) in myJson{
-                            self.rubMas.append(deleteTrash(from: deleteTrash(from: sub["rubric_title"].stringValue), fromSide: 0))
+                            self.rubMas.append(sub["rubric_title"].stringValue)
                         }
                         for index in temp2...temp{
                             let t = [String]()
                             self.artMas.append(t)
                             for (_, sub):(String, JSON) in myJson2{
                                 if sub["rubric_id"].intValue == index{
-                                    self.artMas[index-temp2].append(deleteTrash(from: sub["article_title"].stringValue))
+                                    self.artMas[index-temp2].append(sub["article_title"].stringValue)
                                 }
                             }
                         }
@@ -94,7 +96,7 @@ class JViewController: UIViewController, ExpyTableViewDelegate, ExpyTableViewDat
     
     func expandableCell(forSection section: Int, inTableView tableView: ExpyTableView) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "rubricCell")! as UITableViewCell
-        cell.backgroundColor = UIColor(red:0.85, green:0.91, blue:0.99, alpha:1.0)
+        cell.backgroundColor = UIColor(red:0.85, green:0.91, blue:0.99, alpha: 1.0)
         cell.textLabel?.text = self.rubMas[section]
         return cell
     }
@@ -105,16 +107,26 @@ class JViewController: UIViewController, ExpyTableViewDelegate, ExpyTableViewDat
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let destinationController = segue.destination as! ArticleViewController
+            destinationController.parametres["rubric_id"] = indexPath.section
+            destinationController.parametres["article_id"] = indexPath.row
+            destinationController.parametres["article_title"] = self.artMas[indexPath.section][indexPath.row-1]
+        }
     }
-    */
+ 
 
 }
 

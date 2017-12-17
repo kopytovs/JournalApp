@@ -10,5 +10,8 @@ target 'JournalApp' do
   pod "BouncyLayout"
   pod 'SwiftyJSON'
   pod 'ExpyTableView'
+  pod 'DynamicColor', '~> 4.0.1'
+  pod 'SimplePDF'
+  pod 'PMSuperButton'
 
 end

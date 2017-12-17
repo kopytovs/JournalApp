@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import DynamicColor
 
 let url = "http://94.19.235.6:3000"
 //let url = "http://127.0.0.1:3000"
@@ -16,7 +17,7 @@ let url = "http://94.19.235.6:3000"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
+    let themeColor = DynamicColor(red:0.33, green:0.51, blue:0.79, alpha:1.0)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

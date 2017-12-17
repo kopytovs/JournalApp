@@ -14,6 +14,7 @@
 		9309BBBC1FDD6CDD00667884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9309BBBA1FDD6CDD00667884 /* LaunchScreen.storyboard */; };
 		9309BBCF1FDDA4D100667884 /* JournalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */; };
 		9309BBD71FDDD4B200667884 /* JViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9309BBD61FDDD4B200667884 /* JViewController.swift */; };
+		93BCE5B51FE03D9600F60BDE /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCE5B41FE03D9600F60BDE /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9309BBBD1FDD6CDD00667884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsTableViewController.swift; sourceTree = "<group>"; };
 		9309BBD61FDDD4B200667884 /* JViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JViewController.swift; sourceTree = "<group>"; };
+		93BCE5B41FE03D9600F60BDE /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				9309BBB11FDD6CDD00667884 /* AppDelegate.swift */,
 				9309BBCE1FDDA4D100667884 /* JournalsTableViewController.swift */,
 				9309BBD61FDDD4B200667884 /* JViewController.swift */,
+				93BCE5B41FE03D9600F60BDE /* ArticleViewController.swift */,
 				9309BBB51FDD6CDD00667884 /* Main.storyboard */,
 				9309BBB81FDD6CDD00667884 /* Assets.xcassets */,
 				9309BBBA1FDD6CDD00667884 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9309BBB21FDD6CDD00667884 /* AppDelegate.swift in Sources */,
+				93BCE5B51FE03D9600F60BDE /* ArticleViewController.swift in Sources */,
 				9309BBD71FDDD4B200667884 /* JViewController.swift in Sources */,
 				9309BBCF1FDDA4D100667884 /* JournalsTableViewController.swift in Sources */,
 			);
@@ -361,7 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.JournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -377,7 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.JournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
